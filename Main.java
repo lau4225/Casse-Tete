@@ -133,16 +133,18 @@ public class Main extends Application {
 
                     Alert felicitation = new Alert(Alert.AlertType.CONFIRMATION);
                     felicitation.setTitle("Casse-Tête Réussi!");
+                    felicitation.setHeaderText("Félicitation!! :D");
                     felicitation.setContentText("Voulez-vous rejouer?");
-
                     ButtonType reponse = felicitation.showAndWait().get();
+
                     if (reponse == ButtonType.OK){
                         root.setHgap(4);root.setVgap(4);
                         melanger();
                     } else if (reponse == ButtonType.CANCEL){
-                        felicitation.close(); event.consume(); primaryStage.close();}
+                        felicitation.close(); primaryStage.close();event.consume();}
                 }});
             //source et destination même mode de transfert
+
 
             int finalI1 = i;                                  //1I1 = FIN
             tabImage.get(i).setOnDragOver(event -> { //pour accepter modes de transfert
